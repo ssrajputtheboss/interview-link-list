@@ -1,0 +1,21 @@
+{
+  "color": "o",
+  "javascript": [
+    {
+      "msg": "What is currying in javascript? detailed explanation!",
+      "time": "11 August 2021",
+      "link": "https://blog.bitsrc.io/understanding-currying-in-javascript-ceb2188c339",
+      "reactions":{
+        ":verify_black:" : 10
+      }
+    },
+    {
+      "msg": "Difference between throttling and debouncing? throttle vs debounce",
+      "time": "11 August 2021",
+      "link": "https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript",
+      "reactions":{
+        ":cool_doge:" : 15
+      }
+    }
+  ]
+}

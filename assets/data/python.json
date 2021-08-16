@@ -1,0 +1,20 @@
+{
+  "color": "ba",
+  "python": [
+    {
+      "msg": "It's more important to know about libraries/modules that are available in python like matplotlib,numpy,pandas etc.",
+      "time": "12 August 2021",
+      "link": "",
+      "reactions":{
+        ":verify_black:" : 50
+      }
+    },
+    {
+      "msg": "120+ common questions in python",
+      "time": "12 August 2021",
+      "link": "https://www.mygreatlearning.com/blog/python-interview-questions/",
+      "reactions":{
+      }
+    }
+  ]
+}

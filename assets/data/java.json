@@ -1,0 +1,49 @@
+{
+  "color": "y",
+  "java": [
+    {
+      "msg": "Basic OOP concepts polymorphism,abstraction,encapsulation etc. are very important in java",
+      "time": "12 August 2021",
+      "link": "",
+      "reactions":{
+        ":celebration:": 32,
+        ":java:": 25
+      }
+    },
+    {
+      "msg": "Java basic questions",
+      "time": "12 August 2021",
+      "link": "https://www.mygreatlearning.com/blog/java-interview-questions/",
+      "reactions":{
+      }
+    },
+    {
+      "msg": "What is API in java? Application Programming Interface",
+      "time": "12 August 2021",
+      "link": "https://www.educba.com/what-is-api-in-java/",
+      "reactions":{
+      }
+    },
+    {
+      "msg": "CharSequence vs String difference in java",
+      "time": "16 August 2021",
+      "link": "https://www.baeldung.com/java-char-sequence-string",
+      "reactions":{
+      }
+    },
+    {
+      "msg": "What is Serializable interface? What is it used for?",
+      "time": "16 August 2021",
+      "link": "https://www.geeksforgeeks.org/serializable-interface-in-java/",
+      "reactions":{
+      }
+    },
+    {
+      "msg": "The StringBuffer class in java",
+      "time": "16 August 2021",
+      "link": "https://www.javatpoint.com/StringBuffer-class",
+      "reactions":{
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "color": "g",
+  "android": [
+    {
+      "msg": "Collection of interview questions in android",
+      "time": "16 August 2021",
+      "link": "https://www.interviewbit.com/android-interview-questions/",
+      "reactions":{
+        ":among_us_dance:": 30
+      }
+    },
+    {
+      "msg": "Difference between Foreground and background service?",
+      "time": "16 August 2021",
+      "link": "https://ostoday.org/android/what-is-foreground-and-background-in-android.html",
+      "reactions":{
+      }
+    },
+    {
+      "msg": "Services in android",
+      "time": "16 August 2021",
+      "link": "https://developer.android.com/guide/components/services",
+      "reactions":{
+      }
+    }
+  ]
+}
