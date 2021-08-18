@@ -19,14 +19,14 @@ class Body extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     MessageView.avatar = Container(
-      padding: EdgeInsets.all(3),
-      margin: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(3),
+      margin: const EdgeInsets.all(5),
       child: CircleAvatar(backgroundImage: AssetImage('assets/logos/$_title.png'),),
     );
     MessageView.titleName = Container(
-      padding: EdgeInsets.all(3),
-      margin: EdgeInsets.all(3),
-      child: Text(_title.toUpperCase(),style: TextStyle(fontWeight: FontWeight.bold, color: StringColor.get[_color],letterSpacing: 1.5,fontSize: 16),),
+      padding: const EdgeInsets.all(3),
+      margin: const EdgeInsets.all(3),
+      child: Text(_title.toUpperCase(),style: TextStyle(fontWeight: FontWeight.bold, color: StringColor.get[_color] ?? Colors.white,letterSpacing: 1.5,fontSize: 16)),
     );
     return ScrollablePositionedList.builder(
         itemCount: _messageList.length,

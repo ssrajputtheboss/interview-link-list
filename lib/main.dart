@@ -10,7 +10,8 @@ import 'package:interview_link_list/utils/drawer_widget.dart';
 import 'package:interview_link_list/utils/message_view.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-final info = '''Collection of interview questions with ans links.''';
+final INFO = '''Collection of interview questions with ans links.''';
+final EMPTY_WIDGET = Container(height: 0,width: 0);
 
 void main() {
   runApp(MyApp());
@@ -80,12 +81,12 @@ class _MainPageState extends State<MainPage>{
           icon: Icon(Icons.close,color: Colors.white,),
           onPressed: _toggleSearchMode
       )
-    ],
+    ]
   );
 
   AppBar normalAppBar() => AppBar(
     backgroundColor: Color.fromRGBO(32,34,37, 1),
-    title: Text('#  $_currentChannel'),
+    title: Text('#  ${_currentChannel.replaceAll('_', '-')}'),
     actions: [
       IconButton(
           icon: Icon(Icons.search_outlined,color: Colors.white,),
@@ -96,9 +97,8 @@ class _MainPageState extends State<MainPage>{
           applicationName: 'InterviewLinkList',
           applicationVersion: '1.0.0',
           context: context,children: [
-            //Text('About InterviewLinkList',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
             SingleChildScrollView(
-              child: Text(info),
+              child: Text(INFO),
             )
         ]
       ), icon: Icon(Icons.info_outline,color: Colors.white,))
@@ -108,7 +108,7 @@ class _MainPageState extends State<MainPage>{
   AppBar landscapeAppBar() => AppBar(
     leading: Container(),
     backgroundColor: Color.fromRGBO(32,34,37, 1),
-    title: Text('#  $_currentChannel'),
+    title: Text('#  ${_currentChannel.replaceAll('_', '-')}'),
     centerTitle: true,
     actions: [
       IconButton(
@@ -120,17 +120,17 @@ class _MainPageState extends State<MainPage>{
 
   @override
   Widget build(BuildContext context) {
-    final isLandscape = (MediaQuery.of(context).size.width > MediaQuery.of(context).size.height * 6/4) && defaultTargetPlatform!=TargetPlatform.android && defaultTargetPlatform!=TargetPlatform.iOS;
+    final isLandscape = (MediaQuery.of(context).size.width > MediaQuery.of(context).size.height * 3/2) && defaultTargetPlatform!=TargetPlatform.android && defaultTargetPlatform!=TargetPlatform.iOS;
     return Scaffold(
       backgroundColor: Color.fromRGBO(47, 49, 50, 1),
-      appBar: _isSearchMode?searchAppBar():(isLandscape? landscapeAppBar(): normalAppBar()),
-      drawer: isLandscape?Container(width: 10,height: 10,):DrawerWidget(
+      appBar: _isSearchMode ? searchAppBar():(isLandscape ? landscapeAppBar(): normalAppBar()),
+      drawer: isLandscape ? Container(width: 10,height: 10,) : DrawerWidget(
           _currentServer,
           _currentChannel,
-              (String c){
+          (String c){
             _setCurrentChannel(c);
           },
-        isLandscape
+          isLandscape
       ),
       body: FutureBuilder(
         initialData: "",
@@ -151,7 +151,7 @@ class _MainPageState extends State<MainPage>{
             }catch(e){
               color = 'w';
             }
-            return isLandscape? Row(
+            return isLandscape ? Row(
               children: [
                 Expanded(
                   flex: 1,
@@ -172,7 +172,7 @@ class _MainPageState extends State<MainPage>{
             ) : Body(_currentChannel,color,list,_itemScrollController);
           }
           else
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: const CircularProgressIndicator());
         },
       ),
       bottomNavigationBar: Container(
@@ -221,7 +221,7 @@ class _MainPageState extends State<MainPage>{
           ],
         ),
       ),
-      floatingActionButton: _isSearchMode?
+      floatingActionButton: _isSearchMode ?
       Container(
         padding: EdgeInsets.only(left: 6,right: 6),
         decoration: BoxDecoration(
@@ -231,7 +231,7 @@ class _MainPageState extends State<MainPage>{
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('${_pointer<0?0:_pointer+1}/${_searchResults.length}',style: TextStyle(color: Colors.white)),
+            Text('${_pointer+1}/${_searchResults.length}',style: const TextStyle(color: Colors.white)),
             IconButton(
               iconSize: 16,
               icon: Icon(Icons.keyboard_arrow_up,color: Colors.white,),

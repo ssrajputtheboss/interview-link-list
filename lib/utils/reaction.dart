@@ -8,8 +8,8 @@ class Reaction extends StatelessWidget{
   final int _count;
   Reaction(String emoji,int count) : _count=count,_emoji=emoji;
   Widget getEmojiByName(String name){
-    final Image emoji = Emoji.get[name]!;
-    return emoji == null ? Icon(Icons.error,size: 14,color: Colors.red,):emoji;
+    final Image? emoji = Emoji.get[name];
+    return emoji ?? const Icon(Icons.error,size: 14,color: Colors.red,) ;
   }
   @override
   Widget build(BuildContext context) {
