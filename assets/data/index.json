@@ -6,6 +6,9 @@
   "java":[
    2,
    4
+  ],
+  "spring_boot":[
+   0
   ]
  },
  "is":{
@@ -15,6 +18,9 @@
   "java":[
    2,
    4
+  ],
+  "spring_boot":[
+   0
   ]
  },
  "currying":{
@@ -30,7 +36,8 @@
    0,
    2,
    3,
-   5
+   5,
+   6
   ],
   "python":[
    0,
@@ -39,6 +46,9 @@
   "android":[
    0,
    2
+  ],
+  "spring_boot":[
+   0
   ]
  },
  "javascript":{
@@ -83,6 +93,9 @@
  "and":{
   "javascript":[
    1
+  ],
+  "java":[
+   6
   ],
   "android":[
    1
@@ -177,7 +190,8 @@
    1,
    2,
    3,
-   5
+   5,
+   6
   ]
  },
  "questions":{
@@ -255,6 +269,21 @@
  "class":{
   "java":[
    5
+  ]
+ },
+ "loose":{
+  "java":[
+   6
+  ]
+ },
+ "coupling":{
+  "java":[
+   6
+  ]
+ },
+ "tight":{
+  "java":[
+   6
   ]
  },
  "it's":{
@@ -377,6 +406,26 @@
  "services":{
   "android":[
    2
+  ]
+ },
+ "dependency":{
+  "spring_boot":[
+   0
+  ]
+ },
+ "injection":{
+  "spring_boot":[
+   0
+  ]
+ },
+ "spring":{
+  "spring_boot":[
+   0
+  ]
+ },
+ "boot":{
+  "spring_boot":[
+   0
   ]
  }
 }

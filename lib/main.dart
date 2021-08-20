@@ -129,8 +129,7 @@ class _MainPageState extends State<MainPage>{
           _currentChannel,
           (String c){
             _setCurrentChannel(c);
-          },
-          isLandscape
+          }
       ),
       body: FutureBuilder(
         initialData: "",
@@ -160,8 +159,7 @@ class _MainPageState extends State<MainPage>{
                       _currentChannel,
                           (String c){
                         _setCurrentChannel(c);
-                      },
-                    isLandscape
+                      }
                   ),
                 ),
                 Expanded(

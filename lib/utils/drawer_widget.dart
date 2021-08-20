@@ -5,26 +5,23 @@ import 'package:flutter/material.dart';
 class DrawerWidget extends StatefulWidget{
   final String _currentServer,_currentChannel;
   final Function _changeChannel;
-  final bool _isLandscape;
-  DrawerWidget(String current,String currentChannel,changeChannel,bool isLandscape,{Key? key}) : _currentServer = current,_currentChannel=currentChannel,_changeChannel=changeChannel,_isLandscape=isLandscape,super(key: key);
-  _DrawerWidgetState createState() => _DrawerWidgetState(_currentServer,_currentChannel,_changeChannel,_isLandscape);
+  DrawerWidget(String current,String currentChannel,changeChannel,{Key? key}) : _currentServer = current,_currentChannel=currentChannel,_changeChannel=changeChannel,super(key: key);
+  _DrawerWidgetState createState() => _DrawerWidgetState(_currentServer,_currentChannel,_changeChannel);
 }
 
 class _DrawerWidgetState extends State<DrawerWidget>{
   final Function _changeFunction;
-  final bool _isLandscape;
   final List<CircleAvatar> _serverIcons = const [const CircleAvatar(backgroundImage:const NetworkImage('https://media.giphy.com/media/oYQ9HRm5Mo7VXeMNVR/giphy.gif'),)];
-  final List<String> _channels = ['default','javascript','java','node_js','react_js','mongodb','postgresql','python','android'];
+  final List<String> _channels = ['default','javascript','java','node_js','react_js','mongodb','postgresql','python','android','spring_boot'];
   String _currentServer;
   String _currentChannel ;
   _DrawerWidgetState(String current,
       String currentChannel,
-      Function changeFunction,
-      bool isLandscape) :
+      Function changeFunction
+      ) :
         _currentServer = current,
         _currentChannel=currentChannel,
-        _changeFunction=changeFunction,
-        _isLandscape=isLandscape
+        _changeFunction=changeFunction
   ;
   @override
   Widget build(BuildContext context) {
@@ -95,7 +92,7 @@ class _DrawerWidgetState extends State<DrawerWidget>{
                                     setState(() {
                                       _currentChannel = _channels[i];
                                     });
-                                    if(!_isLandscape)
+                                    if(Navigator.canPop(context))
                                       Navigator.pop(context);
                                   },
                                   )

@@ -44,6 +44,13 @@
       "link": "https://www.javatpoint.com/StringBuffer-class",
       "reactions":{
       }
+    },
+    {
+      "msg": "Loose coupling and tight coupling in Java",
+      "time": "16 August 2021",
+      "link": "https://www.geeksforgeeks.org/coupling-in-java/",
+      "reactions":{
+      }
     }
   ]
 }

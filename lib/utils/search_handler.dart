@@ -1,5 +1,6 @@
 
-/*import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class SearchBoxController{
   late final Function _pointerSetter,_lengthSetter;
@@ -36,16 +37,16 @@ class _SearchBox extends State<SearchBox>{
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('${_pointer<0?0:_pointer+1}/${length}',style: TextStyle(color: Colors.white)),
+            Text('${_pointer+1}/${_length}',style: TextStyle(color: Colors.white)),
             IconButton(
               iconSize: 16,
-              icon: Icon(Icons.keyboard_arrow_up,color: Colors.white,),
-              onPressed: _onMoveUp,
+              icon: Icon(Icons.keyboard_arrow_up,color: Colors.white),
+              onPressed: (){}//_onMoveUp,
             ),
             IconButton(
               iconSize: 16,
               icon: Icon(Icons.keyboard_arrow_down,color: Colors.white,),
-              onPressed: _onMoveDown,
+              onPressed: (){}//_onMoveDown,
             )
           ],
         )
@@ -53,4 +54,3 @@ class _SearchBox extends State<SearchBox>{
   }
 
 }
-*/

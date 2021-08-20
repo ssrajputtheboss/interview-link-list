@@ -28,7 +28,7 @@ List<int> search(String channel, List<String> keywords) {
 }
 
 Future<void> indexer() async {
-  final channels = ['javascript', 'java','node_js','react_js','mongodb','postgresql','python','android'];
+  final channels = ['javascript', 'java','node_js','react_js','mongodb','postgresql','python','android','spring_boot'];
   var indexMap = new Map<String,Map<String,List<int>>>();
   final re = RegExp(r"([^a-zA-Z0-9'_])+", dotAll: true);
   final doWork = () async {

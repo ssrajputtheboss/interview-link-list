@@ -26,7 +26,7 @@ class Body extends StatelessWidget{
     MessageView.titleName = Container(
       padding: const EdgeInsets.all(3),
       margin: const EdgeInsets.all(3),
-      child: Text(_title.toUpperCase(),style: TextStyle(fontWeight: FontWeight.bold, color: StringColor.get[_color] ?? Colors.white,letterSpacing: 1.5,fontSize: 16)),
+      child: Text(_title.replaceAll('_',' ').toUpperCase(),style: TextStyle(fontWeight: FontWeight.bold, color: StringColor.get[_color] ?? Colors.white,letterSpacing: 1.5,fontSize: 16)),
     );
     return ScrollablePositionedList.builder(
         itemCount: _messageList.length,
