@@ -1,4 +1,13 @@
 {
   "color": "b",
-  "react_js": []
+  "react_js": [
+    {
+      "msg": "10 core concepts in react",
+      "time": "2 September 2021",
+      "link": "https://payalpaul2436.medium.com/10-main-core-concept-you-need-to-know-about-react-303e986e1763",
+      "reactions":{
+        ":cool_doge:" : 60
+      }
+    }
+  ]
 }
