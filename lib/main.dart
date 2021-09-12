@@ -31,7 +31,7 @@ class InterviewLinkListApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.blue,
-            canvasColor: Color.fromRGBO(32,34,37, 1),
+            canvasColor: const Color.fromRGBO(32,34,37, 1),
           ),
           home: MainPage(),
           ),
