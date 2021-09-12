@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:interview_link_list/main.dart';
 import 'package:interview_link_list/utils/body.dart';
 import 'package:interview_link_list/utils/drawer_widget.dart';
 import 'package:interview_link_list/utils/floating_search_widget.dart';
@@ -17,28 +18,28 @@ class MainPage extends StatelessWidget{
               preferredSize: Size.fromHeight(60),
               child: MutableAppBar(isLandscape),
             ),
-            drawer: isLandscape ? Container(width: 10,height: 10,) : DrawerWidget(),
+            drawer: isLandscape ? EMPTY_WIDGET : DrawerWidget(),
             body: Body(),
             bottomNavigationBar: Container(
               height: 70,
-              padding: EdgeInsets.all(4),
+              padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
                   color: Colors.black54,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10))
+                  borderRadius: BorderRadius.only(topLeft: const Radius.circular(10),topRight: const Radius.circular(10))
               ),
               child: Row(
                 children: [
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Container(margin: EdgeInsets.all(3),child: CircleAvatar(child: Icon(Icons.image_outlined,color: Colors.white,),)),
-                      Container(margin: EdgeInsets.all(3),child: CircleAvatar(child: Icon(Icons.card_giftcard,color: Colors.white,),)),
+                      Container(margin: const EdgeInsets.all(3),child: CircleAvatar(child: Icon(Icons.image_outlined,color: Colors.white,),)),
+                      Container(margin: const EdgeInsets.all(3),child: CircleAvatar(child: Icon(Icons.card_giftcard,color: Colors.white,),)),
                     ],
                   ),
                   Expanded(flex: 6,
                       child: Container(
-                        margin: EdgeInsets.all(5),
-                        padding: EdgeInsets.all(5),
+                        margin: const EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(5),
                         child: TextField(
                           enabled: false,
                           style: TextStyle(color: Colors.white),

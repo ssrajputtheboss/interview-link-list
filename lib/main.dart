@@ -9,20 +9,18 @@ import 'package:interview_link_list/utils/main_page.dart';
 import 'package:redux/redux.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-final INFO = '''Collection of interview questions with ans links.''';
 final EMPTY_WIDGET = const SizedBox();
 final ItemScrollController itemScrollController = ItemScrollController();
 
 void main() {
   final _initialState = AppState();
   final Store<AppState> store = Store<AppState>( reducer, initialState: _initialState);
-  runApp(MyApp(store: store));
+  runApp(InterviewLinkListApp(store: store));
 }
 
-class MyApp extends StatelessWidget {
+class InterviewLinkListApp extends StatelessWidget {
   final Store<AppState> store;
-  // This widget is the root of your application.
-  MyApp({required this.store});
+  InterviewLinkListApp({required this.store});
   @override
   Widget build(BuildContext context) {
     setIndexJSON();

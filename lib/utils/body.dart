@@ -23,10 +23,10 @@ class Body extends StatelessWidget{
   Widget build(BuildContext context) {
     final isLandscape = (MediaQuery.of(context).size.width > MediaQuery.of(context).size.height * 3/2) && defaultTargetPlatform!=TargetPlatform.android && defaultTargetPlatform!=TargetPlatform.iOS;
     return StoreConnector<AppState,AppState>(
-      ignoreChange: (state)=>_lastState?.currentChannel == state.currentChannel,
+      ignoreChange: (state)=>state.currentChannel == _lastState?.currentChannel,
       converter: (store)=>store.state,
       builder: (context,state){
-        print(++c);
+        print('body${++c}');
         _lastState = state;
         MessageView.avatar = Container(
           padding: const EdgeInsets.all(3),
@@ -46,23 +46,26 @@ class Body extends StatelessWidget{
                 decoded[state.currentChannel].forEach((e) =>
                     list.add(MessageBody(e['msg'], e['time'], e['link'],
                         Map.from(e['reactions'])
-                    )
-                    )
-                );
+                    )));
               }catch(e){
                 color = 'w';
               }
               MessageView.titleName = Container(
                 padding: const EdgeInsets.all(3),
                 margin: const EdgeInsets.all(3),
-                child: Text(state.currentChannel.replaceAll('_',' ').toUpperCase(),style: TextStyle(fontWeight: FontWeight.bold, color: StringColor.get[color] ?? Colors.white,letterSpacing: 1.5,fontSize: 16)),
-              );
+                child: Text(
+                    state.currentChannel.replaceAll('_',' ').toUpperCase(),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: StringColor.get[color] ?? Colors.white,
+                        letterSpacing: 1.5,
+                        fontSize: 16
+                    )));
               return isLandscape ? Row(
                 children: [
                   Expanded(
                     flex: 1,
-                    child: DrawerWidget(
-                    ),
+                    child: DrawerWidget(),
                   ),
                   Expanded(
                       flex: 3,
@@ -71,8 +74,11 @@ class Body extends StatelessWidget{
                 ],
               ) : body(list);
             }
-            else
-              return const Center(child: const CircularProgressIndicator());
+            else {
+              return const Center(
+                  child: const CircularProgressIndicator()
+              );
+            }
           },
         );
       },
@@ -82,9 +88,7 @@ class Body extends StatelessWidget{
   Widget body(List<MessageBody> _messageList){
     return ScrollablePositionedList.builder(
       itemCount: _messageList.length,
-      itemBuilder: (ctx,i){
-        return MessageView(_messageList[i]);
-      },
+      itemBuilder: (ctx,i)=> MessageView(_messageList[i]),
       itemScrollController: _itemScrollController,
       itemPositionsListener: itemPositionsListener,
     );

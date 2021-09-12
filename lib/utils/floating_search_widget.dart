@@ -14,7 +14,7 @@ class FloatingSearchWidget extends StatelessWidget{
       builder: (context,state){
         return state.isSearchMode ?
         Container(
-            padding: EdgeInsets.only(left: 6,right: 6),
+            padding: const EdgeInsets.only(left: 6,right: 6),
             decoration: BoxDecoration(
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(20)
@@ -38,8 +38,7 @@ class FloatingSearchWidget extends StatelessWidget{
                   },
                 )
               ],
-            )
-        ):
+            )):
         Container();
       },
     );

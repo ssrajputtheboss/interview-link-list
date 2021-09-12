@@ -16,9 +16,7 @@ class MessageView extends StatelessWidget{
   static Widget? _titleName,_avatar;
   static void set avatar(Widget avatar) => _avatar=avatar;
   static void set titleName(Widget title) => _titleName=title;
-  MessageView(MessageBody messageBody):
-        _messageBody=messageBody
-  ;
+  MessageView(MessageBody messageBody) : _messageBody=messageBody;
 
   @override
   Widget build(BuildContext context) {
@@ -27,80 +25,78 @@ class MessageView extends StatelessWidget{
     reactions.add(Container(
       padding: const EdgeInsets.all(3),
       margin: const EdgeInsets.all(3),
-      child: Column(mainAxisAlignment: MainAxisAlignment.center,children: [Icon(Icons.emoji_emotions_outlined,color: Colors.grey,size: 20,)],),
-    ));
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.emoji_emotions_outlined,
+            color: Colors.grey,
+            size: 20,
+          )
+        ],
+      )));
     return Align(
       alignment: Alignment.topLeft,
       child: Container(
         padding: const EdgeInsets.all(4),
         margin: const EdgeInsets.all(2),
-        decoration: BoxDecoration(
-        ),
         child:Row(
           mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _avatar!,
-                Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            _titleName!,
-                            Container(
-                              padding: const EdgeInsets.all(3),
-                              margin: const EdgeInsets.all(3),
-                              child: Text(_messageBody.time,style: TextStyle( color: Colors.grey,fontSize: 11),),
-                            ),
-                          ],
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(3),
-                          margin: const EdgeInsets.all(3),
-                          child: Text(_messageBody.msg, style: TextStyle( color: Colors.white,fontSize: 14), overflow: TextOverflow.clip )
-                        ),
-                        FutureBuilder(
-                            future: canLaunch(_messageBody.link),
-                            builder: (ctx,res){
-                              if(res.hasData && res.connectionState == ConnectionState.done && res.data == true )
-                                return TextButton(onPressed: ()=>launch(_messageBody.link), child: Text(_messageBody.link,style: const TextStyle(color: Colors.blue)));
-                              else
-                                return EMPTY_WIDGET;
-                            }
-                        ),
-                        (_messageBody.link.trim() == '' || kIsWeb)?
-                        EMPTY_WIDGET:(
-                        Container(
-                          child: AnyLinkPreview(
-                            titleStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
-                            link: _messageBody.link,
-                            displayDirection: UIDirection.UIDirectionHorizontal,
-                            showMultimedia: true,
-                            errorWidget: errorWidget,
-                            placeholderWidget: EMPTY_WIDGET,
-                            backgroundColor: Colors.black,
-                            boxShadow: [BoxShadow(color: Colors.white,blurRadius: 0.2)],
-                          ),
-                        )
-                        ),
-                        Container(
-                            padding: const EdgeInsets.all(2),
-                            margin: const EdgeInsets.all(2),
-                            child: Wrap(
-                              children: reactions,
-                            )
-                        ),
-                      ],
-                    ),
-                )
-              ],
-            ),
-      ),
-    );
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _avatar!,
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      _titleName!,
+                      Container(
+                        padding: const EdgeInsets.all(3),
+                        margin: const EdgeInsets.all(3),
+                        child: Text(_messageBody.time,style: TextStyle( color: Colors.grey,fontSize: 11),),
+                      ),
+                    ],
+                  ),
+                  Container(
+                      padding: const EdgeInsets.all(3),
+                      margin: const EdgeInsets.all(3),
+                      child: Text(_messageBody.msg, style: TextStyle( color: Colors.white,fontSize: 14), overflow: TextOverflow.clip )
+                  ),
+                  FutureBuilder(
+                      future: canLaunch(_messageBody.link),
+                      builder: (ctx,res){
+                        if(res.hasData && res.connectionState == ConnectionState.done && res.data == true )
+                          return TextButton(onPressed: ()=>launch(_messageBody.link), child: Text(_messageBody.link,style: const TextStyle(color: Colors.blue)));
+                        else
+                          return EMPTY_WIDGET;
+                      }
+                  ), (_messageBody.link.trim() == '' || kIsWeb)?
+                  EMPTY_WIDGET:
+                  Container(
+                      child: AnyLinkPreview(
+                        titleStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
+                        link: _messageBody.link,
+                        displayDirection: UIDirection.UIDirectionHorizontal,
+                        showMultimedia: true,
+                        errorWidget: errorWidget,
+                        placeholderWidget: EMPTY_WIDGET,
+                        backgroundColor: Colors.black,
+                        boxShadow: [BoxShadow(color: Colors.white,blurRadius: 0.2)],
+                      )),
+                  Container(
+                      padding: const EdgeInsets.all(2),
+                      margin: const EdgeInsets.all(2),
+                      child: Wrap(children: reactions)
+                  )
+                ],
+              ))
+          ],
+        )));
   }
 }
 

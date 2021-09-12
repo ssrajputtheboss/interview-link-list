@@ -14,15 +14,24 @@ class Reaction extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 2,right: 2),
+      margin: const EdgeInsets.only(left: 2,right: 2),
       child: Chip(
-          padding: EdgeInsets.all(0),
-          backgroundColor: Color.fromRGBO(0, 0, 100, 0.4),
-          shape: RoundedRectangleBorder(side: BorderSide(width: 2,color: Colors.indigo),borderRadius: BorderRadius.circular(5)),
+          padding: const EdgeInsets.all(0),
+          backgroundColor: const Color.fromRGBO(0, 0, 100, 0.4),
+          shape: RoundedRectangleBorder(
+              side: BorderSide(
+                  width: 2,
+                  color: Colors.indigo
+              ),
+              borderRadius: BorderRadius.circular(5)
+          ),
           avatar: getEmojiByName(_emoji),
-          label: Text('$_count',style: TextStyle(color: Colors.white,fontSize: 14),)
-      ),
-    );
+          label: Text(
+            '$_count',
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 14
+            ))));
   }
 }
 /*

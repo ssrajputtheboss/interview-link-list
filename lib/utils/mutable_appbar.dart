@@ -6,17 +6,18 @@ import 'package:interview_link_list/algorithm/index.dart';
 import 'package:interview_link_list/state_management/actions.dart';
 import 'package:interview_link_list/state_management/app_state.dart';
 
+final INFO = '''Collection of interview questions with ans links.''';
+
 class MutableAppBar extends StatelessWidget{
 
   final bool isLandscape;
-
   MutableAppBar(this.isLandscape);
 
   void _toggleSearchMode(BuildContext context){
     StoreProvider.of<AppState>(context).dispatch(AppAction(action: ActionList.toggleSearchMode));
   }
+
   AppBar searchAppBar(BuildContext context,state) => AppBar(
-      leading: Container(),
       backgroundColor: Color.fromRGBO(32,34,37, 1),
       title: TextField(
         style: TextStyle(color: Colors.white),
@@ -30,7 +31,8 @@ class MutableAppBar extends StatelessWidget{
               AppAction(
                   action: ActionList.setSearchResults,
                   payload: search(state.currentChannel, value.split(RegExp(r'\W+',dotAll: true)))
-              ));
+              )
+          );
         },
       ),
       actions: [
@@ -55,7 +57,7 @@ class MutableAppBar extends StatelessWidget{
             applicationVersion: '1.0.0',
             context: context,children: [
           SingleChildScrollView(
-            child: Text('INFO was here'),
+            child: Text(INFO),
           )
         ]
         ), icon: Icon(Icons.info_outline,color: Colors.white,))
@@ -63,7 +65,6 @@ class MutableAppBar extends StatelessWidget{
   );
 
   AppBar landscapeAppBar(BuildContext context,state) => AppBar(
-    leading: Container(),
     backgroundColor: Color.fromRGBO(32,34,37, 1),
     title: Text('#  ${state.currentChannel.replaceAll('_', '-')}'),
     centerTitle: true,
@@ -74,6 +75,7 @@ class MutableAppBar extends StatelessWidget{
       )
     ],
   );
+
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState,AppState>(
