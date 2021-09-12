@@ -14,7 +14,7 @@ void main() {
 
   testWidgets('complete test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+    //await tester.pumpWidget(MyApp());
     tester.allWidgets.forEach((element) =>print(element));
     //expect(find.text('# javascript'), findsOneWidget);
     //search click
