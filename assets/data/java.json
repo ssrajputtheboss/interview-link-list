@@ -51,6 +51,13 @@
       "link": "https://www.geeksforgeeks.org/coupling-in-java/",
       "reactions":{
       }
+    },
+    {
+      "msg": "SAM Interface(functional interface) in Java",
+      "time": "30 september 2021",
+      "link": "https://dzone.com/articles/java-8-functional-interfaces-sam",
+      "reactions":{
+      }
     }
   ]
 }

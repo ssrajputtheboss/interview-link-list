@@ -37,7 +37,11 @@
    2,
    3,
    5,
-   6
+   6,
+   7
+  ],
+  "react_js":[
+   0
   ],
   "python":[
    0,
@@ -138,6 +142,9 @@
  "concepts":{
   "java":[
    0
+  ],
+  "react_js":[
+   0
   ]
  },
  "polymorphism":{
@@ -191,7 +198,8 @@
    2,
    3,
    5,
-   6
+   6,
+   7
   ]
  },
  "questions":{
@@ -223,7 +231,9 @@
  "interface":{
   "java":[
    2,
-   4
+   4,
+   7,
+   7
   ]
  },
  "charsequence":{
@@ -284,6 +294,31 @@
  "tight":{
   "java":[
    6
+  ]
+ },
+ "sam":{
+  "java":[
+   7
+  ]
+ },
+ "functional":{
+  "java":[
+   7
+  ]
+ },
+ "10":{
+  "react_js":[
+   0
+  ]
+ },
+ "core":{
+  "react_js":[
+   0
+  ]
+ },
+ "react":{
+  "react_js":[
+   0
   ]
  },
  "it's":{
