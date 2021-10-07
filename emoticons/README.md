@@ -1,5 +1,6 @@
 # LIST OF EMOTICONS USED IN THIS PROJECT
-|        NAME          |        EMOTICON                                                                                                           |
+|        NAME          |        EMOTICON       |
+| :---------------     |  :-----------------:  |
 |     :cool_doge:      | ![cool_doge](https://github.com/ssrajputtheboss/interview-link-list/tree/main/assets/images/cool_doge.gif)                |
 |    :pepe_dance:      | ![pepe_dance](https://github.com/ssrajputtheboss/interview-link-list/tree/main/assets/images/pepe_dance.gif))             |
 |   :among_us_dance:   | ![among_us_dance](https://github.com/ssrajputtheboss/interview-link-list/tree/main/assets/images/among_us_dance.gif))     |
