@@ -10,7 +10,10 @@ import 'package:interview_link_list/state_management/app_state.dart';
 class DrawerWidget extends StatelessWidget{
   static AppState? lastState;
   static final List<CircleAvatar> _serverIcons = const [const CircleAvatar(backgroundImage:const NetworkImage('https://media.giphy.com/media/oYQ9HRm5Mo7VXeMNVR/giphy.gif'),)];
-  static final List<String> _channels = ['default','javascript','java','node_js','react_js','mongodb','postgresql','python','android','spring_boot'];
+  static final List<String> _channels = [
+    'default', 'javascript','java','node_js','react_js','mongodb','postgresql',
+    'python','android','spring_boot', 'operating_systems', 'computer_networks', 'coding'
+  ];
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState,AppState>(
@@ -30,6 +33,7 @@ class DrawerWidget extends StatelessWidget{
                                 borderRadius: BorderRadius.all(Radius.circular(10))
                             ),
                             child: ListView.builder(
+                                controller: ScrollController(),
                                 itemCount: _serverIcons.length,
                                 itemBuilder: (ctx,int i){
                                   return Container(
