@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:interview_link_list/main.dart';
 import 'package:interview_link_list/state_management/app_state.dart';
+import 'package:interview_link_list/utils/bottom_bar.dart';
 import 'package:interview_link_list/utils/drawer_widget.dart';
 import 'package:interview_link_list/utils/message_view.dart';
 import 'package:interview_link_list/utils/string_color.dart';
@@ -69,7 +70,10 @@ class Body extends StatelessWidget{
                   ),
                   Expanded(
                       flex: 3,
-                      child: body(list)
+                      child: Scaffold(
+                        body:body(list),
+                        bottomNavigationBar: BottomBar(),
+                      )
                   )
                 ],
               ) : body(list);

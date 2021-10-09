@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:interview_link_list/main.dart';
 import 'package:interview_link_list/utils/body.dart';
+import 'package:interview_link_list/utils/bottom_bar.dart';
 import 'package:interview_link_list/utils/drawer_widget.dart';
 import 'package:interview_link_list/utils/floating_search_widget.dart';
 import 'package:interview_link_list/utils/mutable_appbar.dart';
@@ -20,52 +21,7 @@ class MainPage extends StatelessWidget{
             ),
             drawer: isLandscape ? EMPTY_WIDGET : DrawerWidget(),
             body: Body(),
-            bottomNavigationBar: Container(
-              height: 70,
-              padding: const EdgeInsets.all(4),
-              decoration: BoxDecoration(
-                  color: Colors.black54,
-                  borderRadius: BorderRadius.only(topLeft: const Radius.circular(10),topRight: const Radius.circular(10))
-              ),
-              child: Row(
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Container(margin: const EdgeInsets.all(3),child: CircleAvatar(child: Icon(Icons.image_outlined,color: Colors.white,),)),
-                      Container(margin: const EdgeInsets.all(3),child: CircleAvatar(child: Icon(Icons.card_giftcard,color: Colors.white,),)),
-                    ],
-                  ),
-                  Expanded(flex: 6,
-                      child: Container(
-                        margin: const EdgeInsets.all(5),
-                        padding: const EdgeInsets.all(5),
-                        child: TextField(
-                          enabled: false,
-                          style: TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                                  borderSide: BorderSide(color: Colors.grey)
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(30)),
-                                borderSide: BorderSide(color: Colors.grey),
-                              ),
-                              disabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(30)),
-                                borderSide: BorderSide(color: Colors.grey),
-                              ),
-                              hintText: 'Message here',
-                              hintStyle: TextStyle(color: Colors.white),
-                              suffixIcon: Icon(Icons.emoji_emotions_rounded,color: Colors.grey,)
-                          ),
-                        ),
-                      )
-                  )
-                ],
-              ),
-            ),
+            bottomNavigationBar: isLandscape? EMPTY_WIDGET : BottomBar(),
             floatingActionButton: FloatingSearchWidget(),
         );
   }
