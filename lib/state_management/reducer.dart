@@ -32,6 +32,8 @@ AppState reducer(AppState previousState, action) {
       newState.searchResults = action.payload;
       newState.pointer = -1;
       break;
+    case ActionList.setLoaded:
+      newState.hasLoaded = true;
   }
   return newState;
 }

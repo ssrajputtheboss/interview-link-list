@@ -27,7 +27,7 @@ class Body extends StatelessWidget{
       ignoreChange: (state)=>state.currentChannel == _lastState?.currentChannel,
       converter: (store)=>store.state,
       builder: (context,state){
-        print('body${++c}');
+        // print('body${++c}');
         _lastState = state;
         MessageView.avatar = Container(
           padding: const EdgeInsets.all(3),

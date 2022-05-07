@@ -5,11 +5,12 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:interview_link_list/algorithm/index.dart';
 import 'package:interview_link_list/state_management/app_state.dart';
 import 'package:interview_link_list/state_management/reducer.dart';
+import 'package:interview_link_list/utils/animated/landing_page.dart';
 import 'package:interview_link_list/utils/main_page.dart';
 import 'package:redux/redux.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-final EMPTY_WIDGET = const SizedBox();
+const EMPTY_WIDGET = SizedBox();
 final ItemScrollController itemScrollController = ItemScrollController();
 
 void main() {
@@ -33,7 +34,10 @@ class InterviewLinkListApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             canvasColor: const Color.fromRGBO(32,34,37, 1),
           ),
-          home: MainPage(),
+          home: StoreConnector<AppState,bool>(
+            converter: (store) => store.state.hasLoaded,
+            builder: (ctx, hasLoaded) => hasLoaded ? MainPage() : LandingPage(),
+          ),
           ),
     );
   }

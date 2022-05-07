@@ -4,7 +4,8 @@ enum ActionList{
   toggleSearchMode,
   upPointer,
   downPointer,
-  setSearchResults
+  setSearchResults,
+  setLoaded
 }
 
 class AppAction{

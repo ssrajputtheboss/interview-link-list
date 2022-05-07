@@ -3,7 +3,7 @@ import 'package:interview_link_list/utils/message_view.dart';
 
 class AppState{
   String currentServer = "InterviewLinkList",currentChannel = "javascript";
-  bool isSearchMode = false;
+  bool isSearchMode = false, hasLoaded = false;
   List<int> searchResults = [];
   //List<MessageBody> messageList = [];
   int pointer = -1;
@@ -14,6 +14,7 @@ class AppState{
     this.isSearchMode = appState.isSearchMode;
     this.searchResults = appState.searchResults;
     this.pointer = appState.pointer;
+    this.hasLoaded = appState.hasLoaded;
     //this.messageList = appState.messageList;
   }
 
